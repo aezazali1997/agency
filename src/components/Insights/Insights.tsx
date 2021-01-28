@@ -1,15 +1,15 @@
 import React from "react";
-import { Title } from "../shared/title/title";
-/* import styles */
+import { Categories } from "./Categories/Categories";
+import { TopInfo } from "./TopInfo/TopInfo";
 /* import styles */
 import { styles } from "./Insights.style";
-/* import styles */
 /* import styles */
 export const Insights = () => {
 	const classes = styles();
 	return (
 		<div>
-			<Title size={64} data="Insights" />
+			<TopInfo />
+			<Categories />
 		</div>
 	);
 };

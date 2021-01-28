@@ -48,11 +48,11 @@ export const Contact = () => {
 					className={ClassNames(classes.subContainer, classes.darkContainer)}
 				>
 					<div className={classes.halfContainer}>
-						<Title size={16} data="Speak to us" />
+						<Title color="#fff" size={20} data="Speak to us" />
 						<div className={classes.titleContainer}>
 							<h1 className={classes.titleText}>(646) 480.6328</h1>
 						</div>
-						<Title size={16} data="Other offices" />
+						<Title color="#fff" size={20} data="Other offices" />
 						<div className={classes.seattleOfficeDetails}>
 							<h1 className={classes.seattleOffice}>Seattle office</h1>
 							<p className={classes.officeDetails}>
@@ -65,7 +65,7 @@ export const Contact = () => {
 						</div>
 					</div>
 					<div className={classes.halfContainer}>
-						<Title size={16} data="Visit BMF" />
+						<Title color="#fff" size={20} data="Visit BMF" />
 
 						<div className={classes.titleContainer}>
 							<h1 className={classes.titleText}>
