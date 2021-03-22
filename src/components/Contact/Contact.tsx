@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Title } from "../shared/title/title";
 import ReCAPTCHA from "react-google-recaptcha";
 import { styles } from "./Contact.style";
 import ClassNames from "classnames";
 import { ButtonRoundContainer } from "../shared/ButtonRoundContainer/ButtonRoundContainer";
-/* click handler for captcha */
-const onClickHandler = (value: string | null) => {
-	console.log(value);
+type Props = {
+	setNav: (value: boolean) => void;
 };
-export const Contact = () => {
+/* click handler for captcha */
+export const Contact = ({ setNav }: Props) => {
 	const classes = styles();
-	/* const subContainerClasses:string=ClassNames({
-		[classes.subContainer]:true,
-	}) */
+	useEffect(() => {
+		setNav(false);
+	}, []);
 	return (
 		<div className={classes.wrapper}>
 			<Title size={60} data="Contact Us" />

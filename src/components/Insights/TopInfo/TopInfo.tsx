@@ -4,7 +4,7 @@ import { Title } from "../../shared/title/title";
 /* import styles */
 import { styles } from "./TopInfo.style";
 /* import styles */
-import img from "../../../images/AI.jpg";
+import img from "../../../images/AI1.jpg";
 /* import styles */
 export const TopInfo = () => {
 	const classes = styles();

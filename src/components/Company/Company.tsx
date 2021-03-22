@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Philosphy } from "./Philosphy/Philosphy";
 import { Workwith } from "./Workwith/Workwith";
 /* import styles */
@@ -7,7 +7,13 @@ import { Proudof } from "./Proudof/Proudof";
 import { StrategicAlliances } from "./Strategicalliances/StrategicAlliances";
 import { BFMfamily } from "./BFMfamily/BFMfamily";
 /* import styles */
-export const Company = () => {
+type Props = {
+	setNav: (value: boolean) => void;
+};
+export const Company = ({ setNav }: Props) => {
+	useEffect(() => {
+		setNav(false);
+	}, [setNav]);
 	const classes = styles();
 
 	return (

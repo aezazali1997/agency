@@ -5,7 +5,10 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import ClassNames from "classnames";
 import { Link } from "react-router-dom";
 /* component */
-export const Navbar = () => {
+type Props = {
+	back: boolean;
+};
+export const Navbar = ({ back }: Props) => {
 	const [scrollPos, setScrollPos] = useState(0);
 	const [show, setShow] = useState(true);
 	useEffect(() => {
@@ -24,23 +27,23 @@ export const Navbar = () => {
 	});
 	const iconClass: string = ClassNames({
 		[classes.logoIcon]: true,
-		[classes.iconActive]: show,
+		[classes.iconActive]: show && back,
 	});
 	const taglineClass: string = ClassNames({
 		[classes.tagLine]: true,
-		[classes.taglineActive]: show,
+		[classes.taglineActive]: show && back,
 	});
 	const taglineDescClass: string = ClassNames({
 		[classes.tagDescription]: true,
-		[classes.tagDescriptionActive]: show,
+		[classes.tagDescriptionActive]: show && back,
 	});
 	const navLinkClass: string = ClassNames({
 		[classes.navLink]: true,
-		[classes.navLinkActive]: show,
+		[classes.navLinkActive]: show && back,
 	});
 	const numberClass: string = ClassNames({
 		[classes.number]: true,
-		[classes.numActive]: show,
+		[classes.numActive]: show && back,
 	});
 	return (
 		<>
