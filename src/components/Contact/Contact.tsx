@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Title } from "../shared/title/title";
 import ReCAPTCHA from "react-google-recaptcha";
 import { styles } from "./Contact.style";
@@ -10,9 +10,7 @@ type Props = {
 /* click handler for captcha */
 export const Contact = ({ setNav }: Props) => {
 	const classes = styles();
-	useEffect(() => {
-		setNav(false);
-	}, []);
+	setNav(false);
 	return (
 		<div className={classes.wrapper}>
 			<Title size={60} data="Contact Us" />

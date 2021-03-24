@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { styles } from "./Banner.style";
 import bannerImg from "../../../images/banner.jpg";
 import { Card } from "./Card/Card";
@@ -7,8 +7,6 @@ import { Title } from "../../shared/title/title";
 /* component */
 export const Banner = () => {
 	const classes = styles();
-	const [test, setTest] = useState(false);
-	useEffect(() => {}, [1]);
 	return (
 		<>
 			<header className={classes.banner}>

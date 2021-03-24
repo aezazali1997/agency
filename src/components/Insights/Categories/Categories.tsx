@@ -4,44 +4,58 @@ import axios from "axios";
 /* import styles */
 import { styles } from "./Categories.style";
 import { Pagination } from "../../shared/Pagination/Pagination";
+import { IPost } from "../../../Interfaces/post.interface";
+import { Observable } from "rxjs";
 
 /* import styles */
 export const Categories = () => {
-	const [posts, setPosts] = useState([]);
+	/* useState hooks */
+	const [posts, setPosts] = useState<IPost[]>([]);
 	const [isloading, setIsLoading] = useState(false);
 	const [currentPage, setcurrentPage] = useState(1);
-	const [postPerPage] = useState(9);
+	const [postPerPage, setPostPerPage] = useState(9);
 	const [offset, setOffset] = useState(0);
+	/* useState hooks end */
+
 	const CLIENT_ID = `BuForLzp5QHV2dsM7l8gStJzGUinOMABLmXL_3SQmzA`;
 	const API = `https://api.unsplash.com/photos/?client_id=${CLIENT_ID}`;
+
 	useEffect(() => {
-		const fetchPost = async () => {
+		const fetchPost = () => {
 			setIsLoading(true);
-			const res = await axios.get(API);
-			setPosts(res.data);
+			const observable$ = new Observable((observer: any) => {
+				axios
+					.get(API)
+					.then((response) => {
+						observer.next(response.data);
+					})
+					.catch((error) => {
+						observer.error(error);
+					});
+			});
+			observable$.subscribe({
+				next: (data: any) => {
+					setPosts(data);
+				},
+			});
 		};
-		setIsLoading(false);
 		fetchPost();
+		console.log(posts);
+		setIsLoading(false);
 	}, []);
 	const paginate = (Num: number) => {
 		setcurrentPage(Num);
 	};
+
 	const pageCount = Math.ceil(posts.length / postPerPage);
 	const classes = styles();
-	/* const [selected,setSelected] */
 
 	return (
 		<div className={classes.Container}>
 			<Title color="grey" size={24} data="Categories" capitalize={true} />
 			<ul className={classes.list}>
 				<li>
-					<span
-						onClick={() => {
-							alert();
-						}}
-					>
-						all
-					</span>
+					<span>all</span>
 				</li>
 				<li>
 					<span>digital trends</span>
@@ -70,15 +84,17 @@ export const Categories = () => {
 					<input type="button" value=">" className={classes.arrowbtn} />
 				</li>
 			</ul>
-			{/* <Pagination
-			
-				isLoading={isloading}
-				count={pageCount}
-				postPerPage={postPerPage}
-				setOffset={setOffset}
-				currentPage={currentPage}
-				offset={offset}
-			/> */}
+			{
+				<Pagination
+					posts={posts}
+					isLoading={isloading}
+					count={pageCount}
+					postPerPage={postPerPage}
+					setOffset={setOffset}
+					currentPage={currentPage}
+					offset={offset}
+				/>
+			}
 		</div>
 	);
 };

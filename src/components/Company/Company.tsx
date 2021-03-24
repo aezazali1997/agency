@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Philosphy } from "./Philosphy/Philosphy";
 import { Workwith } from "./Workwith/Workwith";
 /* import styles */
@@ -11,9 +11,8 @@ type Props = {
 	setNav: (value: boolean) => void;
 };
 export const Company = ({ setNav }: Props) => {
-	useEffect(() => {
-		setNav(false);
-	}, [setNav]);
+	setNav(false);
+
 	const classes = styles();
 
 	return (

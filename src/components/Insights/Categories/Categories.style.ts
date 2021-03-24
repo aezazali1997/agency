@@ -16,6 +16,7 @@ export const styles = createUseStyles({
 				fontSize: "1.2rem",
 				"&:hover": {
 					color: "#6ccef6",
+					cursor:'pointer',
 				},
 				"&::before": {
 					opacity: 0,

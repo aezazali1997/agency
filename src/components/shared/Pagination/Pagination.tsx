@@ -3,12 +3,12 @@ import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { styles } from "./Pagination.style";
 import "./pagination.css";
-import { post } from "../../../Interfaces/post.interface";
+import { IPost } from "../../../Interfaces/post.interface";
 
 /* global variable */
 /*  */
 type Props = {
-	posts: post;
+	posts: IPost[];
 	isLoading: boolean;
 	count: number;
 	postPerPage: number;

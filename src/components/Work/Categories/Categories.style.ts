@@ -16,6 +16,7 @@ export const styles = createUseStyles({
 				fontSize: "1.2rem",
 				"&:hover": {
 					color: "#6ccef6",
+					cursor:'pointer',
 				},
 				"&::before": {
 					opacity: 0,
@@ -59,7 +60,7 @@ export const styles = createUseStyles({
 	},
 	grid: {
 		display: "grid",
-		gridTemplateColumns: "repeat(3,1fr)",
+		gridTemplateColumns: "repeat(2,1fr)",
 		columnGap: "5rem",
 	},
 	box: {

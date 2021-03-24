@@ -1,4 +1,4 @@
-export interface post {
+export interface IPost {
 	id: string;
 	created_at: string;
 	updated_at: string;
@@ -8,36 +8,36 @@ export interface post {
 	color: string;
 	blur_hash: string;
 	description: null;
-	alt_url:string;
-	urls:Url;
-	links:Link;
+	alt_description:string;
+	urls:IUrl;
+	links:ILink;
 	categories:[];
 	likes:number;
 	liked_by_user:boolean;
 	current_user_collection:[];
-	sponsership:SponserShip
+	sponsership:ISponserShip;
+	user:IUser;
 }
-interface Url {
+interface IUrl {
 	raw:string;
 	full:string;
 	regular:string;
 	small:string;
 	thumb:string;
 }
-interface Link{
+interface ILink{
 	self:string;
 	html:string;
 	download:string;
 	download_location:string;
 }
-interface SponserShip {
+interface ISponserShip {
 	impression_urls:[];
 	tagline:string;
 	tag_url:string;
-	sponser:Sponser;
-	user:User;
+	sponser:ISponser;
 }
-interface Sponser {
+interface ISponser {	
 	id:string;
 	updated_at:string;
 	user_name:string;
@@ -48,15 +48,16 @@ interface Sponser {
 	portfolio_url:string;
 	bio:string;
 	location:null;
-	links:LinkProfile;
-	profile_image:Profile;
+	links:ILinkProfile;
+	profile_image:IProfile;
 	instagram_username:string;
 	total_collections:number;
 	total_likes:number;
 	total_photos:number;
 	accepted_tos:boolean;
+	for_hire:boolean;
 }
-interface LinkProfile{
+interface ILinkProfile{
 	self:string;
 	html:string;
 	photos:string;
@@ -65,12 +66,12 @@ interface LinkProfile{
 	following:string;
 	followers:string;
 }
-interface Profile{
+interface IProfile{
 	small:string;
 	medium:string;
 	large:string;
 }
-interface User {
+interface IUser {
 	id:string;
 	updated_at:string;
 	username:string;
@@ -81,11 +82,12 @@ interface User {
 	portfolio_url:string;
 	bio:string;
 	location:null;
-	links:LinkProfile
-	profile_image:Profile;
+	links:ILinkProfile
+	profile_image:IProfile;
 	instagram_username:string;
 	total_collections:number;
 	total_likes:number;
 	total_photos:number;
 	accepted_tos:boolean;
+	for_hire:boolean;
 }

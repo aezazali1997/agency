@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Branding } from "./Branding/Branding";
 import { DMarketing } from "./DigitalMarketing/DMarketing";
 import { ExperienceDesign } from "./ExperienceDesign/ExperienceDesign";
@@ -13,9 +13,8 @@ type Props = {
 	setNav: (value: boolean) => void;
 };
 export const Services = ({ setNav }: Props) => {
-	useEffect(() => {
-		setNav(false);
-	}, []);
+	setNav(false);
+
 	const classes = styles();
 	return (
 		<div className={classes.container}>

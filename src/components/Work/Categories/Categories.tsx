@@ -1,36 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Title } from "../../shared/title/title";
 /* import styles */
 import { styles } from "./Categories.style";
 import image from "../../../images/AI1.jpg";
-import image1 from "../../../images/image6.jpg";
-import image2 from "../../../images/image7.jpg";
-import image3 from "../../../images/image8.jpg";
-import image4 from "../../../images/image9.jpg";
-import image5 from "../../../images/image10.jpg";
-import image6 from "../../../images/image11.jpg";
-import image7 from "../../../images/image12.jpg";
-import image8 from "../../../images/image13.jpg";
-import image9 from "../../../images/image14.jpg";
-import Pagination from "rc-pagination";
+import { Pagination } from "../../shared/Pagination/Pagination";
+import axios from "axios";
+import { Observable } from "rxjs";
 
 /* import styles */
 export const Categories = () => {
+	/* Client ID AND END POINTS */
+	const CLIENT_ID = `BuForLzp5QHV2dsM7l8gStJzGUinOMABLmXL_3SQmzA`;
+	const API = `https://api.unsplash.com/photos/?client_id=${CLIENT_ID}`;
+	/* ###Client ID AND END POINTS ### */
+
+	/* useState Hooks */
+	const [posts, setPosts] = useState([]);
+	const [isloading, setIsLoading] = useState(false);
+	const [currentPage, setcurrentPage] = useState(1);
+	const [postPerPage] = useState(9);
+	const [offset, setOffset] = useState(0);
+	/*### useState Hooks ###*/
+	const pageCount = Math.ceil(posts.length / postPerPage);
+	/* useEffect hook */
+	useEffect(() => {
+		const fetchPost = () => {
+			setIsLoading(true);
+			const observable$ = new Observable((observer: any) => {
+				axios
+					.get(API)
+					.then((response) => {
+						observer.next(response.data);
+					})
+					.catch((error) => {
+						observer.error(error);
+					});
+			});
+			observable$.subscribe({
+				next: (data: any) => {
+					setPosts(data);
+				},
+			});
+		};
+		fetchPost();
+		console.log(posts);
+		setIsLoading(false);
+	}, []);
+	/* useEffect hook end*/
+
 	const classes = styles();
-	/* const [selected,setSelected] */
 
 	return (
 		<div className={classes.Container}>
 			<Title color="grey" size={24} data="Categories" capitalize={true} />
 			<ul className={classes.list}>
 				<li>
-					<span
-						onClick={() => {
-							alert();
-						}}
-					>
-						all
-					</span>
+					<span>all</span>
 				</li>
 				<li>
 					<span>digital trends</span>
@@ -60,112 +86,30 @@ export const Categories = () => {
 				</li>
 			</ul>
 			<div className={classes.grid}>
-				<div className={classes.box}>
-					<a href="" className={classes.imgLink}>
-						<img src={image} className={classes.image} alt="" />
-					</a>
-					<div className={classes.txtWrapper}>
-						<span className={classes.date}>JUL 21, 2020</span>
-						<a href="" className={classes.link}>
-							Designing Localized Experiences in Higher Education
-						</a>
-					</div>
-				</div>
-				<div className={classes.box}>
-					<a href="" className={classes.imgLink}>
-						<img src={image1} className={classes.image} alt="" />
-					</a>
-					<div className={classes.txtWrapper}>
-						<span className={classes.date}>AUG 21, 2020</span>
-						<a href="" className={classes.link}>
-							Localized Experiences Make all the Difference in the Life Sciences
-							Industry
-						</a>
-					</div>
-				</div>
-				<div className={classes.box}>
-					<a href="" className={classes.imgLink}>
-						<img src={image2} className={classes.image} alt="" />
-					</a>
-					<div className={classes.txtWrapper}>
-						<span className={classes.date}>OCT 21, 2020</span>
-						<a href="" className={classes.link}>
-							October is National Disability Employment Awareness Month
-						</a>
-					</div>
-				</div>
-				<div className={classes.box}>
-					<a href="" className={classes.imgLink}>
-						<img src={image3} className={classes.image} alt="" />
-					</a>
-					<div className={classes.txtWrapper}>
-						<span className={classes.date}>SEP 21, 2020</span>
-						<a href="" className={classes.link}>
-							Data Labeling: Our Latest Solution for the AI-Powered Business
-						</a>
-					</div>
-				</div>
-				<div className={classes.box}>
-					<a href="" className={classes.imgLink}>
-						<img src={image4} className={classes.image} alt="" />
-					</a>
-					<div className={classes.txtWrapper}>
-						<span className={classes.date}>MAR 21, 2020</span>
-						<a href="" className={classes.link}>
-							3 Ways to Put AI to Work for your Brand Now
-						</a>
-					</div>
-				</div>
-				<div className={classes.box}>
-					<a href="" className={classes.imgLink}>
-						<img src={image5} className={classes.image} alt="" />
-					</a>
-					<div className={classes.txtWrapper}>
-						<span className={classes.date}>JAN 21, 2020</span>
-						<a href="" className={classes.link}>
-							The Impact of the Pandemic on the 2020 Holiday Shopping Season and
-							What Retailers Can Do to Prepare
-						</a>
-					</div>
-				</div>
-				<div className={classes.box}>
-					<a href="" className={classes.imgLink}>
-						<img src={image6} className={classes.image} alt="" />
-					</a>
-					<div className={classes.txtWrapper}>
-						<span className={classes.date}>DEC 21, 2020</span>
-						<a href="" className={classes.link}>
-							November is National Native American Heritage Month
-						</a>
-					</div>
-				</div>
-				<div className={classes.box}>
-					<a href="" className={classes.imgLink}>
-						<img src={image7} className={classes.image} alt="" />
-					</a>
-					<div className={classes.txtWrapper}>
-						<span className={classes.date}>NOV 21, 2020</span>
-						<a href="" className={classes.link}>
-							Why Localization Matters in the Financial Services Sector
-						</a>
-					</div>
-				</div>
-				<div className={classes.box}>
-					<a href="" className={classes.imgLink}>
-						<img src={image8} className={classes.image} alt="" />
-					</a>
-					<div className={classes.txtWrapper}>
-						<span className={classes.date}>OCT 21, 2020</span>
-						<a href="" className={classes.link}>
-							Data Labeling: Our Latest Solution for the AI-Powered Business
-						</a>
-					</div>
-				</div>
+				{posts.map((post, index) => {
+					<div key={index} className={classes.box}>
+						<Link to="" className={classes.imgLink}>
+							<img src={image} className={classes.image} alt="" />
+						</Link>
+						<div className={classes.txtWrapper}>
+							<p className={classes.date}>JUL 21, 2020</p>
+							<Link to="" className={classes.link}>
+								Designing Localized Experiences in Higher Education
+							</Link>
+						</div>
+					</div>;
+				})}
 			</div>
 			<div className={classes.pages}>
-				{/* 	<div className={classes.arrow}>&lt;</div> */}
-				<Pagination defaultCurrent={1} current={4} />
-				{/* 	<div className={classes.arrow}>&gt;</div> */}
+				<Pagination
+					posts={posts}
+					isLoading={isloading}
+					count={pageCount}
+					postPerPage={postPerPage}
+					setOffset={setOffset}
+					currentPage={currentPage}
+					offset={offset}
+				/>
 			</div>
 		</div>
 	);

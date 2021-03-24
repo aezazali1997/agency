@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Categories } from "./Categories/Categories";
 import { TopInfo } from "./TopInfo/TopInfo";
 
@@ -7,9 +7,7 @@ type Props = {
 };
 
 export const Insights = ({ setNav }: Props) => {
-	useEffect(() => {
-		setNav(false);
-	}, []);
+	setNav(false);
 
 	return (
 		<div>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Title } from "../../shared/title/title";
-import img from "../../../images/AI1.jpg";
 /* import styles */
 import { styles } from "./Service.style";
 /* import styles */

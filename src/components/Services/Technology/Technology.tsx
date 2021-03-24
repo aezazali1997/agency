@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import chat from "../../../images/chat.png";
 import img from "../../../images/twoperson.jpg";
 /* import styles */
@@ -23,16 +24,16 @@ export const Technology = () => {
 					</p>
 					<ul className={classes.list}>
 						<li>
-							<a href="">Digital Stratergy</a>
+							<Link to="">Digital Stratergy</Link>
 						</li>
 						<li>
-							<a href="">Brand Stratergy</a>
+							<Link to="">Brand Stratergy</Link>
 						</li>
 						<li>
-							<a href="">Digital Transformation</a>
+							<Link to="">Digital Transformation</Link>
 						</li>
 						<li>
-							<a href="">Content Stratergy</a>
+							<Link to="">Content Stratergy</Link>
 						</li>
 					</ul>
 				</div>
