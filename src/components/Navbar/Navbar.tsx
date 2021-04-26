@@ -46,48 +46,48 @@ export const Navbar = ({ back }: Props) => {
 		[classes.numActive]: show && back,
 	});
 	return (
-		<>
-			<nav className={navbarClasses}>
-				<Link to="/" className={classes.home}>
-					<div className={classes.logoName}>
-						<div style={{ display: "inline-block" }}>
-							<AiOutlineBug className={iconClass} />
-						</div>
-						<div className={classes.name}>
-							<h1 className={taglineClass}>IT solutions</h1>
-							<span className={taglineDescClass}>
-								A solution provider Agency
-							</span>
-						</div>
-					</div>
-				</Link>
-				{/* navlinks */}
-				<div className={classes.linkContainer}>
-					<ul className={navLinkClass}>
-						<li>
-							<Link to="/services">Services</Link>
-						</li>
-						<li>
-							<Link to="/work">work</Link>
-						</li>
-						<li>
-							<Link to="/company">company</Link>
-						</li>
-						<li>
-							<Link to="insights">insights</Link>
-						</li>
-						<li>
-							<Link to="/contact">contact</Link>
-						</li>
-					</ul>
-					<div className={numberClass}>
-						<button>
-							<IoLogoWhatsapp /> (+92)-334-4455231
-						</button>
-					</div>
-					<div>{/* hamburger icon */}</div>
-				</div>
-			</nav>
-		</>
-	);
+    <>
+      <nav className={navbarClasses}>
+        <Link to="/" className={classes.home}>
+          <div className={classes.logoName}>
+            <div style={{ display: "inline-block" }}>
+              <AiOutlineBug className={iconClass} />
+            </div>
+            <div className={classes.name}>
+              <h1 className={taglineClass}>ITSOL</h1>
+              <span className={taglineDescClass}>
+                A solution provider Agency
+              </span>
+            </div>
+          </div>
+        </Link>
+        {/* navlinks */}
+        <div className={classes.linkContainer}>
+          <ul className={navLinkClass}>
+            <li>
+              <Link to="/services">Services</Link>
+            </li>
+            <li>
+              <Link to="/work">work</Link>
+            </li>
+            <li>
+              <Link to="/company">company</Link>
+            </li>
+            <li>
+              <Link to="insights">insights</Link>
+            </li>
+            <li>
+              <Link to="/contact">contact</Link>
+            </li>
+          </ul>
+          <div className={numberClass}>
+            <button>
+              <IoLogoWhatsapp /> (+92)-334-4455231
+            </button>
+          </div>
+          <div>{/* hamburger icon */}</div>
+        </div>
+      </nav>
+    </>
+  );
 };
