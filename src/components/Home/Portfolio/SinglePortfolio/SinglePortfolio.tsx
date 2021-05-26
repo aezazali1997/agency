@@ -1,5 +1,4 @@
 import React from "react";
-import { Title } from "../../../shared/title/title";
 import { styles } from "./SinglePortfolio.styles";
 type Props = {
 	link: string;

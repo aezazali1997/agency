@@ -1,17 +1,17 @@
 import React from "react";
 import { Categories } from "./Categories/Categories";
-import { TopInfo } from "./TopInfo/TopInfo";
-
+import { Clients } from "./Clients/Clients";
+import { Video } from "./Video/Video";
 type Props = {
 	setNav: (value: boolean) => void;
 };
-
-export const Insights = ({ setNav }: Props) => {
+export const Work = ({ setNav }: Props) => {
 	setNav(false);
 
 	return (
 		<div>
-			<TopInfo />
+			<Video />
+			<Clients />
 			<Categories />
 		</div>
 	);

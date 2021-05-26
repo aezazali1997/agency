@@ -11,6 +11,7 @@ export const styles = createUseStyles({
 	},
 	submitContainer: {
 		margin: "2rem 0",
+		display: "inline-block",
 		"&:hover $submitBtn": {
 			color: "#00a1df",
 			transform: "translateY(-3%)",
