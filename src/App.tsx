@@ -7,13 +7,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Contact } from "./components/Contact/Contact";
 import { Insights } from "./components/Insights/Insights";
 
-/* primary colors of the web */
-/* 
-blakish 071108
-greyish 364652
-bluish light 7FBEEB
-bluish capricon 56CBF9
-*/
 function App() {
 	return (
 		<Router>

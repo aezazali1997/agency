@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { styles } from "./Navbar.style";
-import { AiOutlineBug } from "react-icons/ai";
+import { DiReact } from "react-icons/di";
 import { IoLogoWhatsapp } from "react-icons/io";
 import ClassNames from "classnames";
 import { Link } from "react-router-dom";
@@ -43,48 +43,48 @@ export const Navbar = () => {
 		[classes.numActive]: show,
 	});
 	return (
-		<>
-			<nav className={navbarClasses}>
-				<Link to="/" className={classes.home}>
-					<div className={classes.logoName}>
-						<div style={{ display: "inline-block" }}>
-							<AiOutlineBug className={iconClass} />
-						</div>
-						<div className={classes.name}>
-							<h1 className={taglineClass}>IT solutions</h1>
-							<span className={taglineDescClass}>
-								A solution provider Agency
-							</span>
-						</div>
-					</div>
-				</Link>
-				{/* navlinks */}
-				<div className={classes.linkContainer}>
-					<ul className={navLinkClass}>
-						<li>
-							<Link to="/services">Services</Link>
-						</li>
-						<li>
-							<Link to="/work">work</Link>
-						</li>
-						<li>
-							<Link to="/banner">company</Link>
-						</li>
-						<li>
-							<Link to="insights">insights</Link>
-						</li>
-						<li>
-							<Link to="/contact">contact</Link>
-						</li>
-					</ul>
-					<div className={numberClass}>
-						<button>
-							<IoLogoWhatsapp /> (+92)-334-4455231
-						</button>
-					</div>
-					<div>{/* hamburger icon */}</div>
-				</div>
-			</nav>
-		</>
-	);
+    <>
+      <nav className={navbarClasses}>
+        <Link to="/" className={classes.home}>
+          <div className={classes.logoName}>
+            <div style={{ display: "inline-block" }}>
+              <DiReact className={iconClass} />
+            </div>
+            <div className={classes.name}>
+              <h1 className={taglineClass}>IT solutions</h1>
+              <span className={taglineDescClass}>
+                A solution provider Agency
+              </span>
+            </div>
+          </div>
+        </Link>
+        {/* navlinks */}
+        <div className={classes.linkContainer}>
+          <ul className={navLinkClass}>
+            <li>
+              <Link to="/services">Services</Link>
+            </li>
+            <li>
+              <Link to="/work">work</Link>
+            </li>
+            <li>
+              <Link to="/banner">company</Link>
+            </li>
+            <li>
+              <Link to="insights">insights</Link>
+            </li>
+            <li>
+              <Link to="/contact">contact</Link>
+            </li>
+          </ul>
+          <div className={numberClass}>
+            <button>
+              <IoLogoWhatsapp /> (+92)-334-4455231
+            </button>
+          </div>
+          <div>{/* hamburger icon */}</div>
+        </div>
+      </nav>
+    </>
+  );
 };
