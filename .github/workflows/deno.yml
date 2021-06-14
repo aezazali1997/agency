@@ -37,8 +37,8 @@ jobs:
          cmd: install
      # install react router
       - name: install react router
-        #run: yarn add history@5 react-router-dom@^6.0.0-beta.0 react-router-dom
-        run: sudo yarn add history@5 react-router-dom@^6.0.0-beta.0
+        #run: yarn add react-router-dom
+        run: sudo yarn addreact-router-dom
        #build react app with yarn
       - name: build react app
         run: sudo yarn build
