@@ -38,7 +38,7 @@ jobs:
      # install react router
       - name: install react router
         #run: yarn add react-router-dom
-        run: sudo yarn addreact-router-dom
+        run: sudo yarn add react-router-dom
        #build react app with yarn
       - name: build react app
         run: sudo yarn build
