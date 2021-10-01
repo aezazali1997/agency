@@ -71,7 +71,7 @@ export const Navbar = ({ back }: Props) => {
               <Link to="/work">work</Link>
             </li>
             <li>
-              <Link to="/banner">company</Link>
+              <Link to="/company">company</Link>
 
             </li>
             <li>

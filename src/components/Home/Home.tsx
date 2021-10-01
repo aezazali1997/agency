@@ -9,9 +9,11 @@ type Props = {
 	setNav: (value: boolean) => void;
 };
 export const Home = ({ setNav }: Props) => {
+
 	useEffect(() => {
 		setNav(true);
-	}, []);
+	}, [setNav]);
+
 	return (
 		<div>
 			<Banner />
@@ -20,6 +22,8 @@ export const Home = ({ setNav }: Props) => {
 			<Portfolio />
 			<Insights />
 			<BMFLife />
+		
+
 		</div>
 	);
 };

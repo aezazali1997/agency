@@ -38,7 +38,7 @@ export const styles = createUseStyles({
     width: 1000,
     height: 1000,
     borderRadius: 1000,
-    backgroundColor: "#6ccef6",
+    backgroundColor: "#005593",
     transition: "all 2s ease",
     "&:hover": {
       marginLeft: "50px",
@@ -48,7 +48,7 @@ export const styles = createUseStyles({
     postion: "absolute",
     marginLeft: 50,
     marginTop: 100,
-    backgroundColor: "#dddee3",
+    backgroundColor: "#00a1df",
     height: 800,
     width: 800,
     borderRadius: 1000,

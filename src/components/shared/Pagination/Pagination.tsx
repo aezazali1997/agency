@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import ReactPaginate from "react-paginate";
 import { styles } from "./Pagination.style";
 import "./pagination.css";
 import { IPost } from "../../../Interfaces/post.interface";
 
-/* global variable */
-/*  */
+
 type Props = {
 	posts: IPost[];
 	isLoading: boolean;
@@ -34,14 +32,14 @@ export const Pagination = ({
 	offset,
 }: Props) => {
 	const classes = styles();
-	let data;
+/* 	let data;
 	const loadData = () => {
 		data = posts;
 	};
 
 	useEffect(() => {
 		loadData();
-	}, [data]);
+	}, [posts]); */
 
 	const handlePageClick = (e: event): void => {
 		const selectedPage = e.selected;

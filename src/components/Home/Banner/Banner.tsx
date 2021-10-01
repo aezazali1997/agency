@@ -1,6 +1,6 @@
 import React from "react";
 import { styles } from "./Banner.style";
-import bannerImg from "../../../images/banner.jpg";
+import bannerImg from "../../../images/header1.jpg";
 import { Card } from "./Card/Card";
 import { ButtonRoundContainer } from "../../shared/ButtonRoundContainer/ButtonRoundContainer";
 import { Title } from "../../shared/title/title";

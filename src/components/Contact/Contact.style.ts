@@ -2,7 +2,7 @@ import { createUseStyles } from "react-jss";
 export const styles = createUseStyles({
 	wrapper: {
 		padding: "7rem 2rem 0 2rem",
-		backgroundColor: "#f6f3f3",
+		backgroundColor: "#fff", //"#f6f3f3"
 	},
 	container: {
 		display: "flex",

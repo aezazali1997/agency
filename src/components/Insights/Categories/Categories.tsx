@@ -1,53 +1,53 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Title } from "../../shared/title/title";
-import axios from "axios";
+// import axios from "axios";
 /* import styles */
 import { styles } from "./Categories.style";
-import { Pagination } from "../../shared/Pagination/Pagination";
-import { IPost } from "../../../Interfaces/post.interface";
-import { Observable } from "rxjs";
+// import { Pagination } from "../../shared/Pagination/Pagination";
+// import { IPost } from "../../../Interfaces/post.interface";
+// import { Observable } from "rxjs";
 
 /* import styles */
 export const Categories = () => {
 	/* useState hooks */
-	const [posts, setPosts] = useState<IPost[]>([]);
-	const [isloading, setIsLoading] = useState(false);
-	const [currentPage, setcurrentPage] = useState(1);
-	const [postPerPage, setPostPerPage] = useState(9);
-	const [offset, setOffset] = useState(0);
+	// const [posts, setPosts] = useState<IPost[]>([]);
+	// const [isloading, setIsLoading] = useState(false);
+	// // const [currentPage, setcurrentPage] = useState(1);
+	// const [postPerPage, setPostPerPage] = useState(9);
+	// const [offset, setOffset] = useState(0);
 	/* useState hooks end */
 
-	const CLIENT_ID = `BuForLzp5QHV2dsM7l8gStJzGUinOMABLmXL_3SQmzA`;
-	const API = `https://api.unsplash.com/photos/?client_id=${CLIENT_ID}`;
+	// const CLIENT_ID = `BuForLzp5QHV2dsM7l8gStJzGUinOMABLmXL_3SQmzA`;
+	// const API = `https://api.unsplash.com/photos/?client_id=${CLIENT_ID}`;
 
-	useEffect(() => {
-		const fetchPost = () => {
-			setIsLoading(true);
-			const observable$ = new Observable((observer: any) => {
-				axios
-					.get(API)
-					.then((response) => {
-						observer.next(response.data);
-					})
-					.catch((error) => {
-						observer.error(error);
-					});
-			});
-			observable$.subscribe({
-				next: (data: any) => {
-					setPosts(data);
-				},
-			});
-		};
-		fetchPost();
-		console.log(posts);
-		setIsLoading(false);
-	}, []);
-	const paginate = (Num: number) => {
-		setcurrentPage(Num);
-	};
+	// useEffect(() => {
+	// 	const fetchPost = () => {
+	// 		setIsLoading(true);
+	// 		const observable$ = new Observable((observer: any) => {
+	// 			axios
+	// 				.get(API)
+	// 				.then((response) => {
+	// 					observer.next(response.data);
+	// 				})
+	// 				.catch((error) => {
+	// 					observer.error(error);
+	// 				});
+	// 		});
+	// 		observable$.subscribe({
+	// 			next: (data: any) => {
+	// 				setPosts(data);
+	// 			},
+	// 		});
+	// 	};
+	// 	fetchPost();
+	// 	console.log(posts);
+	// 	setIsLoading(false);
+	// }, []);
+	// const paginate = (Num: number) => {
+	// 	setcurrentPage(Num);
+	// };
 
-	const pageCount = Math.ceil(posts.length / postPerPage);
+	// const pageCount = Math.ceil(posts.length / postPerPage);
 	const classes = styles();
 
 	return (
@@ -84,7 +84,7 @@ export const Categories = () => {
 					<input type="button" value=">" className={classes.arrowbtn} />
 				</li>
 			</ul>
-			{
+	{/* 		{
 				<Pagination
 					posts={posts}
 					isLoading={isloading}
@@ -94,7 +94,7 @@ export const Categories = () => {
 					currentPage={currentPage}
 					offset={offset}
 				/>
-			}
+			} */}
 		</div>
 	);
 };
