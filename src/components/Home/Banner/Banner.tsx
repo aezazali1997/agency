@@ -26,7 +26,7 @@ export const Banner = () => {
               text="Find Out"
               backgroundCLR="white"
               txtColor="white"
-              clr="#0274c2"
+              clr="blue"
             />
           </div>
         </div>

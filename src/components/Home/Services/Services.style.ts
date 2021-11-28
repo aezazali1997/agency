@@ -3,6 +3,7 @@ export const styles = createUseStyles({
   listContainer: {
     display: "flex",
     margin: "1rem 4rem",
+    width: "20%",
   },
   imgContainer: {
     width: 300,
@@ -12,14 +13,15 @@ export const styles = createUseStyles({
   img: {
     width: "100%",
     display: "none",
+    transition: "all .3s ease-in-out",
   },
-  imgActive: {
-    display: "block",
-  },
-  isSelected:{
+  isSelected: {
     color: "#284f8d !important",
     fontWeight: 600,
-    transition:'none !important'
+    display: "block",
+    transition: ".5s ease-in-out all",
+    transformOrigin: "50% 0",
+    transform: "translate3d(0px,0px,-30px) rotateX(90deg)",
   },
   list: {
     listStyleType: "none",
@@ -30,10 +32,10 @@ export const styles = createUseStyles({
     },
     "& button": {
       display: "block",
-      background:'transparent',
-      border:'none',
-      fontSize:'inherit',
-      cursor: 'pointer',
+      background: "transparent",
+      border: "none",
+      fontSize: "inherit",
+      cursor: "pointer",
       position: "relative",
       textDecoration: "none",
       color: "black",

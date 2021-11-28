@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { Philosphy } from "./Philosphy/Philosphy";
 import { Workwith } from "./Workwith/Workwith";
 /* import styles */
@@ -8,20 +8,20 @@ import { StrategicAlliances } from "./Strategicalliances/StrategicAlliances";
 import { BFMfamily } from "./BFMfamily/BFMfamily";
 /* import styles */
 type Props = {
-	setNav: (value: boolean) => void;
+  setNav: (value: boolean) => void;
 };
-export const Company = ({ setNav }: Props) => {
-	setNav(false);
+export const Company: FC<Props> = ({ setNav }) => {
+  setNav(false);
 
-	const classes = styles();
+  const classes = styles();
 
-	return (
-		<div className={classes.company}>
-			<Philosphy />
-			<Workwith />
-			<Proudof />
-			<StrategicAlliances />
-			<BFMfamily />
-		</div>
-	);
+  return (
+    <div className={classes.company}>
+      <Philosphy />
+      <Workwith />
+      <Proudof />
+      <StrategicAlliances />
+      <BFMfamily />
+    </div>
+  );
 };
